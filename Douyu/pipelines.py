@@ -12,7 +12,7 @@ class DouyuPipeline(object):
     def __init__(self):
         self.file = codecs.open('Douyuanchor.csv', 'wb+', encoding='utf-8')  # 创建以utf-8编码的csv文件
         client = pymongo.MongoClient('localhost', 27017)  # 创建mongodb连接
-        db = client['douyu']  # 创建mongodb数据库huya
+        db = client['spiderData']  # 创建mongodb数据库huya
         self.collection = db['douyuanchor']  # 创建数据库huya中collection
 
     def process_item(self, item, spider):
