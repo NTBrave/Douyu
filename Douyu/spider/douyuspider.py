@@ -57,6 +57,6 @@ class douyuSpider(scrapy.Spider):
 
     def room_parse(self, response):
         items = response.meta['items']
-        items['fan_num'] = items['watch_num']
+        items['fan_num'] = int(items['watch_num'])
         items['crawl_time'] = time.strftime('%Y-%m-%d %X', time.localtime())  # 记录爬取时间
         yield items  # 输出items
